@@ -96,14 +96,14 @@ body {
 }
 
 
-.ShoppingCar{
+.ShoppingCarNavBar{
     position: relative;
 
 
 }
 
 
-.ShoppingCar div{
+.ShoppingCarNavBar div{
     width: 20px;
     height: 20px;
 
@@ -118,9 +118,12 @@ body {
 
 }
 
-.ShoppingCarIcon{
+.ShoppingCarNavBarIcon{
     width: 30px;
 }
+
+
+
 
 /*Aquí empiezan los estilos para el menú desktop*/
 
@@ -200,7 +203,6 @@ body {
 
 }
 
-
 .MobileMenu .Email{
     font-size: var(--sm);
     font-weight: bold !important;
@@ -224,6 +226,145 @@ body {
 /*Aquí Finalizan los estilos para el menú movil*/
 
 
+/* Inicia Estilos para el carrito de compras */
+
+.Tittle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Tittle img {
+
+    transform: rotate(180deg);
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.Tittle img:hover {
+    cursor: pointer;
+}
+
+.Tittle h1 {
+    text-align: center;
+    font-size: var(--lg);
+    margin-bottom: 20px;
+}
+
+.ShoppingCar {
+    width: 410px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 2px;
+    padding: 0px;
+    background: var(--white);
+
+}
+
+.ShoppingCarContainer {
+    width: 400px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+}
+
+.ShoppingCards p:nth-child(2) {
+    color: rgb(162, 51, 51);
+}
+
+.ShoppingCards p:nth-child(3) {
+    font-size: var(--md);
+    font-weight: bolder;
+}
+
+.ShoppingCards {
+
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    align-items: center;
+    /*Centrar verticalmente*/
+    place-items: center;
+    /*Centrar horizontalmente*/
+}
+
+.ShoppingCards figure .productIMG {
+    width: 100px;
+    height: 70px;
+    border-radius: 15px;
+}
+
+.ShoppingCards figure {
+    margin: 0%;
+}
+
+.CloseIMG:hover {
+    cursor: pointer;
+}
+
+.CloseIMG {
+    width: 20px;
+    height: 20px;
+}
+
+.MyOrderInfo {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 5px;
+    margin-top: 20px;
+
+    background-color: var(--text-input-field);
+    align-items: center;
+
+}
+
+
+.MyOrderInfo p:nth-child(1) {
+
+    font-size: var(--sm);
+    color: brown;
+
+}
+
+.MyOrderInfo p:nth-child(2) {
+
+    font-size: var(--lg);
+    color: black;
+    font-weight: bolder;
+
+}
+
+.PrimaryButton {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 100%;
+
+    border-radius: 8px;
+    border: none;
+
+    color: rgb(246, 236, 236);
+    font-weight: bolder;
+    font-size: var(--md);
+    background-color: blueviolet;
+
+    cursor: pointer;
+}
+
+/* Finaliza Estilos Para carrito de compras */
+
+
 /*Inicia Esto es parte de la barra de nav para modo Desktop y movil*/
 @media (max-width: 640px) {
 
@@ -244,6 +385,11 @@ body {
     /*Esto para Que el menu desktop no se muestre en mobile
      una vez se procese con JS*/
     .DesktopMenucontainer{
+        display: none;
+    }
+
+    /*Esto es para el carrito de compras*/
+    .Tittle {
         display: none;
     }
 

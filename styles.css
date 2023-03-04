@@ -38,6 +38,8 @@ body {
 
 .MenuIcon{
     display: none;
+    cursor: pointer;
+    
 }
 
 .Logo{
@@ -166,9 +168,63 @@ body {
     display: inline-block;
     font-weight: bolder;
 }
+/*Aquí Finalizan los estilos para el menú desktop*/
 
-/*Aquí Finalizan los estilos para el meno desktop*/
 
+/*Aquí Inician los estilos para el menú movil*/
+
+.MobileMenu{
+    position: absolute;
+    background: var(--white);
+    left: 0;
+    top: 124px;
+
+}
+
+.MobileMenu a{
+            
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bolder;
+
+}
+
+.MobileMenu ul{
+    padding: 10px;
+    margin: 24px 0px 0px 0px;
+    list-style: none;
+}
+
+.MobileMenu ul li{
+    margin-bottom: 10px;
+
+}
+
+
+.MobileMenu .Email{
+    font-size: var(--sm);
+    font-weight: bold !important;
+    color: brown !important;
+}
+
+.MobileMenu ul:nth-child(1){
+    border-bottom: 1px solid var(--very-light-pink);
+}
+
+.SignOut {
+    font-size: var(--sm);
+    color: brown !important;
+}
+
+.MobileMenu ul:nth-child(2){
+    margin-bottom: 50px;
+
+}
+
+/*Aquí Finalizan los estilos para el menú movil*/
+
+
+/*Inicia Esto es parte de la barra de nav para modo Desktop y movil*/
 @media (max-width: 640px) {
 
     .MenuIcon{
@@ -184,4 +240,21 @@ body {
     .NavBarRight .NavBarEmail{
         display: none;
     }
+
+    /*Esto para Que el menu desktop no se muestre en mobile
+     una vez se procese con JS*/
+    .DesktopMenucontainer{
+        display: none;
+    }
+
+
 }
+
+@media (min-width: 641px) {
+    /*Esto para Que el menu mobile no se muestre en desktop
+     una vez se procese con JS*/
+    .MobileMenu{
+        display: none;
+    }
+}
+/*Finaliza Esto es parte de la barra de nav para modo Desktop y movil*/

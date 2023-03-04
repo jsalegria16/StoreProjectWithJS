@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+        <title>Email has been sent</title>
+        <style>
+    
+            /*
+            Cómo ordenar los estilos
+            
+            Una manera de hacerlo es según su propósito. Siguiendo el siguiente orden:
+    
+            Posicionamiento
+            Modelo de caja
+            Tipografía
+            Visuales
+            Otros
+            
+            */
+            :root {
+                --white: #FFFFFF;
+                --black: #000000;
+                --very-light-pink: #C7C7C7;
+                --text-input-field: #F7F7F7;
+                --hospital-green: #ACD9B2;
+                --sm: 14px;
+                --md: 16px;
+                --lg: 18px;
+                /*Estas cosas son variables*/
+              }
+              body {
+                margin: 0;
+                font-family: 'Quicksand', sans-serif;
+              }
+    
+            .ContainerEmailSent{
+                width: 100%;
+                height: 100%;
+                display: grid;
+                place-items: center;
+            }
+    
+            .SentContainer {
+                display: grid;
+                grid-template-rows: auto auto auto;
+                width: 300px;
+                margin-top: 40px;
+                justify-items:center ;
+    
+            }
+    
+            .LogLogin{
+    
+                width:100%;
+                margin-bottom: 30px;
+    
+                justify-self: center; /*Alinear centro*/
+    
+                display: none; /*EN pc no tiene que aparecer, en mobile sí.*/
+            }
+
+            
+    
+            .TittleForm {
+                font-size: var(--lg);
+
+                margin-bottom: 20px;
+                text-align: center;
+            }
+    
+            .Subtitile{
+    
+                margin-top: 15px;
+                margin-bottom: 40px;
+                font-size: var(--sm);
+                text-align: center;
+    
+            }
+
+            .LogEmailSentContainer{
+
+                display: flex;
+                width:150px;
+                height:150px;
+                margin-bottom: 30px;
+                border-radius: 50%;
+                background-color: #a8b1e5;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            .LogEmailSentContainer img{
+                width: 100px;
+                height: 100px;
+                text-align: center;
+            }
+    
+            .PrimaryButton{
+    
+                margin-top: 20px;
+                height: 40px;
+                width: 200px;
+    
+                border-radius: 8px;
+                border: none;
+    
+                color:white ;
+                font-weight: bolder;
+                background-color: blueviolet;
+    
+                cursor: pointer;
+            }
+
+            .ResentParagraph{
+                font-size: var(--sm);
+            }
+
+            .ResentParagraph span{
+                color: var(--very-light-pink);
+            }
+            
+            .ResentParagraph a{
+                color: #0f2394;
+                font-weight: bolder;
+                text-decoration: none;/*Quitar la liena del hiper*/
+            }
+
+
+            @media (max-width: 640px) {
+                .LogLogin{
+                    display: block;
+                }
+            }
+            /*Osea que para valores inferiores a 640px, colocar el logo*/
+    
+        </style>
+    
+    
+    </head>
+<body>
+    <section class="ContainerEmailSent">
+        <div class="SentContainer">
+
+
+            <img src="./logs/fondo-loginstore.jpg" alt="Log" class="LogLogin">
+
+
+            <h1 class="TittleoForm">Email has been sent </h1>
+            <p class="Subtitile"> An E-email has been sent, check your inbox for intruction in how to reset your password</p>
+
+            <div class="LogEmailSentContainer">
+                <img src="./icons/01EmailSentt.png" alt="Log" class="LogEmailSent">
+            </div>
+            
+            <button class="PrimaryButton LoginButton" > Login </button>
+
+            <p class="ResentParagraph"> 
+                <strong> Didn´t receive the E-mail? </strong> 
+                <a href="/"> Click here to resend</a>
+            </p>
+
+
+        </div>
+    </section>
+</body>
+</html>

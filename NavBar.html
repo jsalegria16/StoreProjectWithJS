@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Navagation Bar</title>
+    <style>
+
+        /*
+        Cómo ordenar los estilos
+        
+        Una manera de hacerlo es según su propósito. Siguiendo el siguiente orden:
+
+        Posicionamiento
+        Modelo de caja
+        Tipografía
+        Visuales
+        Otros
+        
+        */
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+            /*Estas cosas son variables*/
+          }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .BarraNavegavion{
+
+            padding: 20px;
+            display: flex;
+            border-bottom: 1px solid var(--very-light-pink);
+            align-items: center;
+            justify-content: space-between;
+            margin: 1px solid var(--black);            
+        }
+
+        .MenuIcon{
+            display: none;
+        }
+
+        .Logo{
+            width: 150px;
+            height: auto;
+        }
+
+        .NavBarLeft, .NavBarRight{
+            display: flex;
+        }
+
+        .NavBarRight li{
+            display: flex;
+            padding: 10px;
+        }
+       
+
+        .NavBarLeft ul, .NavBarRight ul{
+            
+            display:flex;
+            align-items: center;
+            list-style: none;  
+        }
+
+        .NavBarLeft ul li a, .NavBarRight ul li a{
+            
+            padding: 10px;
+            color: brown;
+            text-decoration: none;
+            border: 1px solid white;
+
+
+        }
+
+        .NavBarLeft ul li a:hover, .NavBarRight ul li a:hover{
+            
+            color: brown;
+            text-decoration: none;
+            border: 1px solid brown;
+            font-weight: bolder;border-radius: 10px;
+
+        }
+
+
+        .NavBarEmail{
+            color: var(--black);
+            font-size: var(--sm);
+        }
+
+
+        .ShoppingCar{
+            position: relative;
+
+
+        }
+
+
+        .ShoppingCar div{
+            width: 20px;
+            height: 20px;
+
+            top: -2px;
+            right: -2px;
+            text-align: center;
+            position: absolute;
+            font-size: var(--sm);
+            background-color: red;
+            border-radius: 50%;
+
+
+        }
+
+        .ShoppingCarIcon{
+            width: 30px;
+        }
+
+        @media (max-width: 640px) {
+
+            .MenuIcon{
+                display: block;
+                width: 30px;
+                height: 30px;
+            }
+
+            .NavBarLeft ul{
+                display: none;
+            }
+           
+            .NavBarRight .NavBarEmail{
+                display: none;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="BarraNavegavion">
+        <img src="/icons/menu.png" alt="MenuIcon" class="MenuIcon">
+
+        <div class="NavBarLeft">
+            <img src="/logs/fondo-loginstore.jpg" alt="Logo" class="Logo">
+
+            <ul>
+                <li>
+                    <a href="/">All</a>
+                </li>
+                <li>
+                    <a href="/">Clothes</a>
+                </li>
+                <li>
+                    <a href="/">Electronics</a>
+                </li>
+                <li>
+                    <a href="/">Fornitures</a>
+                </li>
+                <li>
+                    <a href="/">Toys</a>
+                </li>
+                <li>
+                    <a href="/">Others</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="NavBarRight">
+            <ul>
+                <li class="NavBarEmail">
+                    sebaslaegria.sa@gmail.com
+                </li>
+                <li class="ShoppingCar">
+                    <img src="/icons/carros.png" alt="Shopping Car" class="ShoppingCarIcon">
+                    <div>
+                        2
+                    </div>
+                </li>
+           
+            </ul>
+        </div>
+    </nav>
+
+    
+</body>
+</html>

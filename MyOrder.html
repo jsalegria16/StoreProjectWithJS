@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>My Order</title>
+    <style>
+
+        /*
+        Cómo ordenar los estilos
+        
+        Una manera de hacerlo es según su propósito. Siguiendo el siguiente orden:
+
+        Posicionamiento
+        Modelo de caja
+        Tipografía
+        Visuales
+        Otros
+        
+        */
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+            /*Estas cosas son variables*/
+          }
+          body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .MyOrder{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+
+        }
+
+        
+
+        .MyOrderContainer{
+            width:400px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .Tittle{
+            text-align: center;
+            font-size: var(--lg);
+            margin-bottom: 20px;
+        }
+
+        .MyOrderInfo{
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 16px;
+            
+            padding: 5px;
+
+            background-color: var(--text-input-field);
+            align-items: center;
+            
+        }
+
+        .MyOrderInfo p:nth-child(1){
+            font-size: var(--md);
+            color: #000000;
+            font-weight: bold;
+
+        }
+
+        .MyOrderInfo p:nth-child(2){
+
+            font-size: var(--sm);
+            color: brown;
+
+        }
+
+        .MyOrderInfo p:nth-child(3){
+
+            font-size: var(--lg);
+            color: black;
+            font-weight: bolder;
+
+        }
+
+        .ShoppingCards p:nth-child(2){
+            color: rgb(162, 51, 51);
+        }
+
+        .ShoppingCards p:nth-child(3){
+            font-size: var(--md);
+          font-weight: bolder;
+        }
+
+        .ShoppingCards {
+
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 16px;
+            align-items: center; /*Centrar verticalmente*/
+            place-items: center; /*Centrar horizontalmente*/
+        } 
+
+        .ShoppingCards figure img{
+            width: 100px;
+            height: 70px;
+            border-radius: 15px;
+        }
+
+        .ShoppingCards figure{
+           margin: 0%;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="MyOrder">
+
+        <div class="MyOrderContainer">
+
+            <h1 class="Tittle"> My Order </h1>
+
+            <div class="MyOrderInfo">
+                <p>
+                    Date
+                </p>
+
+                <p>
+                    Total things 
+                </p>
+
+                <p>
+                    Total Price
+                </p>
+            </div>
+
+            <div class="ShoppingCards">
+
+                <figure>
+                    <img src="/icons/Product11.png" alt="Cosa comprada">
+                </figure>
+
+                <p>
+                    Artículo comprado
+                </p>
+                <p>
+                    Price
+                </p>
+
+            </div>
+
+            <div class="ShoppingCards">
+
+                <figure>
+                    <img src="/icons/Product11.png" alt="Cosa comprada">
+                </figure>
+
+                <p>
+                    Artículo comprado
+                </p>
+                <p>
+                    Price
+                </p>
+
+            </div>
+
+            <div class="ShoppingCards">
+
+                <figure>
+                    <img src="/icons/Product11.png" alt="Cosa comprada">
+                </figure>
+
+                <p>
+                    Artículo comprado
+                </p>
+                <p>
+                    Price
+                </p>
+
+            </div>
+
+            <div class="ShoppingCards">
+
+                <figure>
+                    <img src="/icons/Product11.png" alt="Cosa comprada">
+                </figure>
+
+                <p>
+                    Artículo comprado
+                </p>
+                <p>
+                    Price
+                </p>
+
+            </div>
+
+            <div class="ShoppingCards">
+
+                <figure>
+                    <img src="/icons/Product11.png" alt="Cosa comprada">
+                </figure>
+
+                <p>
+                    Artículo comprado
+                </p>
+                <p>
+                    Price
+                </p>
+
+            </div>
+
+            <div class="ShoppingCards">
+
+                <figure>
+                    <img src="/icons/Product11.png" alt="Cosa comprada">
+                </figure>
+
+                <p>
+                    Artículo comprado
+                </p>
+                <p>
+                    Price
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

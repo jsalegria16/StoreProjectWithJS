@@ -98,6 +98,7 @@ body {
 
 .ShoppingCarNavBar{
     position: relative;
+    cursor: pointer;
 
 
 }
@@ -364,8 +365,64 @@ body {
 
 /* Finaliza Estilos Para carrito de compras */
 
+/*Inicia la parte de los produbtos(InitialPage)*/
+.CardsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px); /*PAra que cada celdita de un producto se ajuste automáticamente al anchos de la pestaña*/
+    place-content: center;
+    margin-top: 20px;
+    gap: 10px;
 
-/*Inicia Esto es parte de la barra de nav para modo Desktop y movil*/
+    
+}
+
+.ProductCard {
+    width: 250px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.ProductCard > img{
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover; /*PAra que no se deforme la imagen con los nuevos width*/
+}
+
+.ProductInfo{
+    display: flex;
+    justify-content: space-between;/*Para que queden uno al lado del otro*/
+    align-items: center;
+}
+
+.ProductCard .ProductInfo figure img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.ProductInfo figure {
+    margin-right: 0;
+}
+
+.ProductInfo p:nth-child(1){
+
+    margin-bottom: 4px;
+    font-weight: bolder;
+    font-size: var(--lg);
+    color: #000000;
+}
+.ProductInfo p:nth-child(2){
+
+    margin-top: 1px;
+    font-weight: bolder;
+    font-size: var(--sm);
+    color:brown;
+}
+
+/*Finaliza la parte de los productos(InitialPage*/
+
+
+/*Inicia Esto es parte de los @media de todos los modulos*/
 @media (max-width: 640px) {
 
     .MenuIcon{
@@ -392,6 +449,28 @@ body {
     .Tittle {
         display: none;
     }
+
+    /*Esto hace parte de la lista de productos (InitialPAge*/
+
+    .CardsContainer{
+        grid-template-columns: repeat(auto-fill, 155px); /*PAra que cada celdita de un producto se ajuste automáticamente al anchos de la pestaña*/   
+        gap: 20px;
+    }
+    .ProductCard {
+        width: 150px;
+        border: 1px solid black;
+        padding: 2px;
+    }
+    .ProductCard > img{
+        width: 100%;
+        border-radius: 20px;
+        object-fit: cover; /*PAra que no se deforme la imagen con los nuevos width*/
+    }
+    .ProductInfo figure {
+        margin-right:0%;
+    }
+
+    /*Esto hace parte de la lista de productos (InitialPAge)*/
 
 
 }

@@ -114,7 +114,7 @@ function RenderElemnts() {
     
         maindiv.append(subImg,subDivProduct);
 
-        maindiv.addEventListener('click',OpenProductDetail); //Para Mirar los detalles del procucto
+        subImg.addEventListener('click',OpenProductDetail); //Para Mirar los detalles del procucto
     
         CardsContainer.append(maindiv); //mando esto para .Cardcontainer del HTML
     

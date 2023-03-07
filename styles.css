@@ -387,13 +387,13 @@ body {
     width: 250px;
     border: 1px solid black;
     padding: 10px;
-    cursor: pointer;
 }
 
 .ProductCard > img{
     width: 100%;
     border-radius: 20px;
     object-fit: cover; /*PAra que no se deforme la imagen con los nuevos width*/
+    cursor: pointer;
 }
 
 .ProductInfo{

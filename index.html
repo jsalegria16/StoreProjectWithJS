@@ -14,7 +14,8 @@
 </head>
 
 <body>
-
+    <!-- Este el contenedor para la barra de navegacion en 
+    donde se tiene el menu mobile y el menu desktop-->
     <nav class="BarraNavegavion">
         <img src="./icons/menu.png" alt="MenuIcon" class="MenuIcon">
 
@@ -134,11 +135,12 @@
 
     </nav>
 
+    <!-- Este el contenedor para mostrar la lista del carrito de comprasa-->
     <aside class="ShoppingCar MenuInactive">
 
         <div class="ShoppingCarContainer">
             <div class="Tittle">
-                <img src="./icons/angulo-derecho.png" alt="back">
+                <img src="./icons/cerrarPD.png" alt="back" class="shoppingCarCloseIcon">
                 <h1 class> My Shopping car </h1>
             </div>
 
@@ -233,6 +235,7 @@
 
     </aside>
 
+   <!-- Este el contenedor para la lista de productos-->
     <section class="Maincontainer">
 
         <div class="CardsContainer">
@@ -253,6 +256,36 @@
             </div> -->
 
     </section>
+
+    <!-- Este es el container para los detalles del producto -->
+    <aside class="ProductDetail MenuInactive">
+
+        <div class="TittleProductDetail">
+            <img src="./icons/cerrarPD.png" alt="back" class="productDetailcloseIcon">
+            <h1 class>  </h1>    
+        </div>
+
+        <img src="/icons/Product11.png" alt="Product" class="ProductDetailImgProduct">
+       
+        
+        <div class="ProductInfoProductDEtal">
+            <p>
+                35$
+            </p>
+            <p>
+                Producto
+            </p>
+            <p>
+                This is a strange Product and could be very usefull 😎
+            </p>
+            <button class="PrimaryButton">
+                <img src="/icons/AddLittleCar.png" alt="AddToCar" class="AddToCarButton">
+                Add to car
+            </button>
+        </div>
+
+    </aside>
+
 
     <script src="./main.js">
 

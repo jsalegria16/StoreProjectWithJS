@@ -182,6 +182,7 @@ body {
     background: var(--white);
     left: 0;
     top: 124px;
+    width: 100%;
 
 }
 
@@ -259,15 +260,21 @@ body {
     box-sizing: border-box;
     position: absolute;
     right: 2px;
-    padding: 0px;
+    padding: 1px;
     background: var(--white);
+    
 
 }
 
 .ShoppingCarContainer {
-    width: 400px;
+
+    padding: 5px;
+    width: 386px;
     display: grid;
     grid-template-rows: auto 1fr;
+    border: 1px solid blue;
+    border-radius: 5%;
+    background: var(--white);
 
 }
 
@@ -380,6 +387,7 @@ body {
     width: 250px;
     border: 1px solid black;
     padding: 10px;
+    cursor: pointer;
 }
 
 .ProductCard > img{
@@ -421,9 +429,110 @@ body {
 
 /*Finaliza la parte de los productos(InitialPage*/
 
+/* Inician los estilos para el product detail*/
+
+.ProductDetail {
+    position: absolute;
+    box-sizing: border-box;
+    width: 400px;
+    border: 1px solid blue;
+    border-radius: 5%;
+    padding: 9px;
+    right: 2px;
+    top: 123px;
+    background: var(--white);
+
+}
+
+.TittleProductDetail{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.TittleProductDetail img{
+
+    transform: rotate(180deg);
+    width: 38px;
+    height: 38px;
+    margin-left: 0px;
+}
+
+.TittleProductDetail img:hover, .TittleProductDetail h1:hover{
+    cursor: pointer;
+}
+
+.TittleProductDetail h1{
+    text-align: center;
+    font-size: var(--sm);
+    margin-bottom: 17px;
+}
+
+
+.ProductDetailImgProduct{
+    width: 100%;
+   
+}
+
+
+
+.PrimaryButton{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 100%;
+
+    border-radius: 8px;
+    border: none;
+
+    color:rgb(246, 236, 236) ;
+    font-weight: bolder;
+    background-color: blueviolet;
+
+    cursor: pointer;
+}
+
+.ProductInfoProductDEtal{
+    margin-left: 20px;
+}
+
+.ProductInfoProductDEtal p:nth-child(1){
+
+    text-align: left;
+    font-weight: bolder;
+    font-size: var(--lg);
+}
+
+.ProductInfoProductDEtal p:nth-child(2){
+    text-align: left;
+    font-size: var(--md);
+}
+
+.ProductInfoProductDEtal p:nth-child(3){
+    font-size: var(--sm);
+}
+
+.PrimaryButton img{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+
+}
+
+
+/* Finalizan los estilos para el product detail*/
+
+
 
 /*Inicia Esto es parte de los @media de todos los modulos*/
 @media (max-width: 640px) {
+
 
     .MenuIcon{
         display: block;
@@ -470,7 +579,30 @@ body {
         margin-right:0%;
     }
 
-    /*Esto hace parte de la lista de productos (InitialPAge)*/
+    /*Fin Esto hace parte de la lista de productos (InitialPAge)*/
+
+    /*Esto es para el carrito de compras Y su responsive en mobile*/
+    .ShoppingCar{
+        width: 100%;
+        margin: 0px;
+        padding: 10px;
+    }
+    .ShoppingCarContainer{
+        width: 98%;
+    }
+    /*Fin Esto es para el carrito de compras*/
+
+    /* Esto hace parte de los detalles de producto*/
+    .ProductDetail img:nth-child(2){
+        width: 100%;
+    }
+
+    .ProductDetail{
+        width: 100%; /*Un responsive bonito */
+        margin: 0px;
+        padding: 15px;
+    }
+    /* Fin hace parte de los detalles de producto*/
 
 
 }

@@ -63,24 +63,24 @@ function createListProducts(){
     productList.push({
         nameProduct : "Bicicleta",
         priceProduct: 400000,
-        imageProduct:"./icons/Product11.png"
+        imageProduct:"https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     });
     productList.push({
         nameProduct : "Teclado",
         priceProduct: 3000,
-        imageProduct:"./icons/Product11.png"
+        imageProduct:"https://media.istockphoto.com/id/1283019397/photo/black-keyboard-with-red-lights-in-background-blur-of-a-very-executive-and-professional.jpg?b=1&s=612x612&w=0&k=20&c=jSH7vij7lIF3aW2gDw8fai9wL3qClyRVAlC___jp794="
     });
 
     productList.push({
         nameProduct : "PC",
         priceProduct: 60000,
-        imageProduct:'./icons/Product11.png'
+        imageProduct:'https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&w=600'
     });
 
     productList.push({
         nameProduct : "Carro",
         priceProduct: 6000000,
-        imageProduct:'./icons/Product11.png'
+        imageProduct:'https://images.pexels.com/photos/3849555/pexels-photo-3849555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     });
 }
 function RenderElemnts() {
@@ -108,6 +108,7 @@ function RenderElemnts() {
                     const ImgAddToCar = document.createElement('img');
                     ImgAddToCar.setAttribute('src','./icons/AddLittleCar.png');
                     ImgAddToCar.setAttribute('alt',"IconAddLittleCar");
+                    ImgAddToCar.classList.add('AddToShoppingCarIcon');
                 FigureOf_SubDivProduct.append(ImgAddToCar);
     
             subDivProduct.append(DivOf_subDivProduct,FigureOf_SubDivProduct);

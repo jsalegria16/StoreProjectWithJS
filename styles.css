@@ -442,7 +442,7 @@ body {
     border: 1px solid blue;
     border-radius: 5%;
     padding: 9px;
-    right: 2px;
+    right: 4px;
     top: 123px;
     background: var(--white);
 
@@ -476,7 +476,7 @@ body {
 
 .ProductDetailImgProduct{
     width: 100%;
-   
+    border-radius: 5%;
 }
 
 
@@ -503,7 +503,7 @@ body {
 }
 
 .ProductInfoProductDEtal{
-    margin-left: 20px;
+    margin-left: 1px;
 }
 
 .ProductInfoProductDEtal p:nth-child(1){
@@ -558,10 +558,12 @@ body {
         display: none;
     }
 
-    /*Esto es para el carrito de compras*/
-    .Tittle {
-        display: none;
-    }
+    /*Esto es para el carrito de compras
+        .Tittle {
+            display: none;
+        }
+        quiero la opcion de cerrar el carrito de ocmpras desde mobile
+    */
 
     /*Esto hace parte de la lista de productos (InitialPAge*/
 
@@ -602,9 +604,9 @@ body {
     }
 
     .ProductDetail{
-        width: 100%; /*Un responsive bonito */
-        margin: 0px;
+        width: 98%; /*Un responsive bonito */
         padding: 15px;
+        right: 4px;
     }
     /* Fin hace parte de los detalles de producto*/
 

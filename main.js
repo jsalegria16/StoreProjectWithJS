@@ -6,11 +6,12 @@ const MEnuMobileContainer = document.querySelector('.MobileMenu')
 
 const ClosemenuButtMobile = document.querySelector('.TittleMenuMobile'); //PAra eventgos sobre el icono de cerrar de menu en mobile
 
-
-
 const ShoppingCarIconMenu = document.querySelector('.ShoppingCarNavBar'); //PAra eventgos sobre el carrito de compra
 const ShoppingCar = document.querySelector('.ShoppingCar')
 const shoppingCarCloseIcon = document.querySelector('.shoppingCarCloseIcon'); //Cerrar el porductDEtail
+const ShoopingCarList = []; //Para los elemento dentro del carrito de compras
+const shoppingCartContainer = document.querySelector(".ShoppingCarContainer");
+const AmountOfElementsShoppingCar = document.querySelector('.AmountOfElementsShoppingCar')   
 
 const CardsContainer =  document.querySelector(".CardsContainer") //PAra la lista de productos(InitialPage)
 const productList = []; //Para la Lista de productos
@@ -48,6 +49,56 @@ function toggleShoppingCar(){
 shoppingCarCloseIcon.addEventListener('click',CloseShoppingCar);
 function CloseShoppingCar(){
     ShoppingCar.classList.add('MenuInactive');
+}
+
+function AddShoppingCar(productoID){
+    /* */
+    console.log(productoID);
+    //El productoID es el src de la img por ahora. con ese productId busco el objeto producto
+    const producto = productList.find(producto => producto.imageProduct === productoID);
+    ShoopingCarList.push(producto);
+    CreateShoppingCartProduct();
+    AmountOfElementsShoppingCar.innerText = ShoopingCarList.length;
+}
+
+function CreateShoppingCartProduct(imagen, nombre, precio) {
+
+    for (eachproduct of productList) {
+    // Crea el elemento div ShoppingCards
+    const shoppingCard = document.createElement("div");
+    shoppingCard.classList.add("ShoppingCards");
+  
+    // Crea el elemento figure con la imagen
+    const figure = document.createElement("figure");
+    const img = document.createElement("img");
+    img.setAttribute("src", eachproduct.imageProduct);
+    img.setAttribute("alt", "Cosa comprada");
+    img.classList.add("productIMG");
+    figure.appendChild(img);
+    shoppingCard.appendChild(figure);
+  
+    // Crea los elementos <p> para el nombre y el precio
+    const nombreElement = document.createElement("p");
+    nombreElement.textContent = eachproduct.nameProduction;
+    shoppingCard.appendChild(nombreElement);
+  
+    const precioElement = document.createElement("p");
+    precioElement.textContent = "$" + eachproduct.priceProduction;
+    shoppingCard.appendChild(precioElement);
+  
+    // Crea el elemento figure con el botón de cierre
+    const closeFigure = document.createElement("figure");
+    const closeImg = document.createElement("img");
+    closeImg.setAttribute("src", "./icons/Close.png");
+    closeImg.setAttribute("alt", "Close");
+    closeImg.classList.add("CloseIMG");
+    //closeImg.addEventListener("click",DeleteItemShoppongCar);//PAra eleminar algo del carrito de compras
+    closeFigure.appendChild(closeImg);
+    shoppingCard.appendChild(closeFigure);
+  
+    // Agrega el elemento ShoppingCards al contenedor ShoppingCarContainer
+    shoppingCartContainer.appendChild(shoppingCard);
+    }
 }
 
 function OpenProductDetail(productoID){
@@ -92,7 +143,7 @@ function CrearDetallesProducto(nombre, precio, imagen, descripcion) {
     productInfoDiv.classList.add('ProductInfoProductDEtal');
 
     const priceP = document.createElement('p');
-        priceP.textContent = precio;
+        priceP.textContent = "$" + precio;
         priceP.classList.add('ProductDetailPrice');
 
     const nameP = document.createElement('p');
@@ -198,6 +249,8 @@ function RenderElemnts() {
         maindiv.append(subImg,subDivProduct);
         //subImg.addEventListener('click',OpenProductDetail); //Para Mirar los detalles del procucto
         subImg.addEventListener('click',function(){OpenProductDetail(subImg.getAttribute('src'))}); //Para Mirar los detalles del procucto
+        ImgAddToCar.addEventListener('click',function(){AddShoppingCar(subImg.getAttribute('src'))});//PAra agregarr al carrito
+
         CardsContainer.append(maindiv); //mando esto para .Cardcontainer del HTML
     
     }

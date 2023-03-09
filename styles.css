@@ -258,7 +258,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-right: 21px;
 }
 
 .Tittle img {
@@ -284,7 +285,9 @@ body {
     box-sizing: border-box;
     position: absolute;
     right: 2px;
-    padding: 1px;
+    padding: 5px;
+    border: 1px solid blue;
+    border-radius: 5%;
     background: var(--white);
     
 
@@ -292,13 +295,17 @@ body {
 
 .ShoppingCarContainer {
 
-    padding: 5px;
-    width: 386px;
+    margin-top: 0px;
+    padding: 6px;
+    width:95%;
+    height: 500px;
+    border: 1px solid black;
+    max-height: 500px; /* altura máxima que deseas definir */
+    overflow: auto; /* agregar scroll cuando se alcance la altura máxima */
     display: grid;
     grid-template-rows: auto 1fr;
-    border: 1px solid blue;
-    border-radius: 5%;
     background: var(--white);
+    
 
 }
 
@@ -313,7 +320,7 @@ body {
 
 .ShoppingCards {
 
-    margin-top: 20px;
+    margin-top: 8px;
     display: grid;
     grid-template-columns: auto 1fr auto auto;
     gap: 16px;
@@ -338,8 +345,8 @@ body {
 }
 
 .CloseIMG {
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
 }
 
 .MyOrderInfo {
@@ -348,10 +355,13 @@ body {
     justify-content: space-between;
     gap: 16px;
 
-    padding: 5px;
-    margin-top: 20px;
+    padding: 0px 20px 0px 20px;
+    margin-top: 6px;
 
     background-color: var(--text-input-field);
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+
     align-items: center;
 
 }
@@ -359,8 +369,9 @@ body {
 
 .MyOrderInfo p:nth-child(1) {
 
-    font-size: var(--sm);
+    font-size: var(--lg);
     color: brown;
+    font-weight: bolder;
 
 }
 
@@ -511,10 +522,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 4px 0px 4px 14px;
     height: 40px;
-    width: 100%;
+    width: 90%;
 
     border-radius: 8px;
     border: none;
@@ -613,12 +623,15 @@ body {
 
     /*Esto es para el carrito de compras Y su responsive en mobile*/
     .ShoppingCar{
-        width: 100%;
+        width:99%;
         margin: 0px;
         padding: 10px;
     }
     .ShoppingCarContainer{
         width: 98%;
+        max-height: none; /* altura máxima que deseas definir */
+        border: none;
+   
     }
     /*Fin Esto es para el carrito de compras*/
 

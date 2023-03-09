@@ -176,6 +176,30 @@ body {
 
 
 /*Aquí Inician los estilos para el menú movil*/
+.TittleMenuMobile{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.TittleMenuMobile img{
+
+    transform: rotate(180deg);
+    width: 38px;
+    height: 38px;
+    margin-left: 0px;
+}
+
+.TittleMenuMobile img:hover, .TittleMenuMobile h1:hover{
+    cursor: pointer;
+}
+
+.TittleMenuMobile h1{
+    text-align: center;
+    font-size: var(--sm);
+    margin-bottom: 17px;
+}
 
 .MobileMenu{
     position: absolute;
@@ -211,7 +235,7 @@ body {
     color: brown !important;
 }
 
-.MobileMenu ul:nth-child(1){
+.MobileMenu ul:nth-child(2){
     border-bottom: 1px solid var(--very-light-pink);
 }
 
@@ -220,7 +244,7 @@ body {
     color: brown !important;
 }
 
-.MobileMenu ul:nth-child(2){
+.MobileMenu ul:nth-child(3){
     margin-bottom: 50px;
 
 }
@@ -240,8 +264,8 @@ body {
 .Tittle img {
 
     transform: rotate(180deg);
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 38px;
     margin-left: 20px;
 }
 

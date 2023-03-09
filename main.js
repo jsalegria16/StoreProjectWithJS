@@ -4,6 +4,10 @@ const DesktopMenucontainer = document.querySelector('.DesktopMenucontainer')
 const menuButtMobile = document.querySelector('.MenuIcon'); //PAra eventgos sobre el icono de menu en mobile
 const MEnuMobileContainer = document.querySelector('.MobileMenu')
 
+const ClosemenuButtMobile = document.querySelector('.TittleMenuMobile'); //PAra eventgos sobre el icono de cerrar de menu en mobile
+
+
+
 const ShoppingCarIconMenu = document.querySelector('.ShoppingCarNavBar'); //PAra eventgos sobre el carrito de compra
 const ShoppingCar = document.querySelector('.ShoppingCar')
 const shoppingCarCloseIcon = document.querySelector('.shoppingCarCloseIcon'); //Cerrar el porductDEtail
@@ -26,6 +30,7 @@ function toggleDesktopMenu(){
 
 }
 
+ClosemenuButtMobile.addEventListener('click',toggleMobileMenu);
 menuButtMobile.addEventListener('click',toggleMobileMenu);
 function toggleMobileMenu(){
     ShoppingCar.classList.add('MenuInactive');
@@ -105,7 +110,7 @@ function CrearDetallesProducto(nombre, precio, imagen, descripcion) {
             addImg.setAttribute('src', '/icons/AddLittleCar.png');
             addImg.setAttribute('alt', 'AddToCar');
             addImg.classList.add('AddToCarButton');
-            
+
     addButton.appendChild(addImg);
     addButton.appendChild(document.createTextNode('Add to car'));
 

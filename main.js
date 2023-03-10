@@ -9,12 +9,12 @@ const ClosemenuButtMobile = document.querySelector('.TittleMenuMobile'); //PAra 
 const ShoppingCarIconMenu = document.querySelector('.ShoppingCarNavBar'); //PAra eventgos sobre el carrito de compra
 const ShoppingCar = document.querySelector('.ShoppingCar')
 const shoppingCarCloseIcon = document.querySelector('.shoppingCarCloseIcon'); //Cerrar el porductDEtail
-const ShoopingCarList = []; //Para los elemento dentro del carrito de compras
+var ShoopingCarList = []; //Para los elemento dentro del carrito de compras
 const shoppingCartContainer = document.querySelector(".ShoppingCarContainer");
 const AmountOfElementsShoppingCar = document.querySelector('.AmountOfElementsShoppingCar')   
 
 const CardsContainer =  document.querySelector(".CardsContainer") //PAra la lista de productos(InitialPage)
-const productList = []; //Para la Lista de productos
+var productList = []; //Para la Lista de productos
 
 const ProductDetail = document.querySelector('.ProductDetail'); //PAra para los detalles del producto
 //const productDetailcloseIcon = document.querySelector('.productDetailcloseIcon'); //Cerrar el porductDEtail
@@ -58,47 +58,67 @@ function AddShoppingCar(productoID){
     const producto = productList.find(producto => producto.imageProduct === productoID);
     ShoopingCarList.push(producto);
     CreateShoppingCartProduct();
+    //CreateShoppingCartProduct(producto.imageProduct,producto.nameProduct,producto.priceProduct);
     AmountOfElementsShoppingCar.innerText = ShoopingCarList.length;
 }
 
-function CreateShoppingCartProduct(imagen, nombre, precio) {
-
-    for (eachproduct of productList) {
-    // Crea el elemento div ShoppingCards
-    const shoppingCard = document.createElement("div");
-    shoppingCard.classList.add("ShoppingCards");
-  
-    // Crea el elemento figure con la imagen
-    const figure = document.createElement("figure");
-    const img = document.createElement("img");
-    img.setAttribute("src", eachproduct.imageProduct);
-    img.setAttribute("alt", "Cosa comprada");
-    img.classList.add("productIMG");
-    figure.appendChild(img);
-    shoppingCard.appendChild(figure);
-  
-    // Crea los elementos <p> para el nombre y el precio
-    const nombreElement = document.createElement("p");
-    nombreElement.textContent = eachproduct.nameProduction;
-    shoppingCard.appendChild(nombreElement);
-  
-    const precioElement = document.createElement("p");
-    precioElement.textContent = "$" + eachproduct.priceProduction;
-    shoppingCard.appendChild(precioElement);
-  
-    // Crea el elemento figure con el botón de cierre
-    const closeFigure = document.createElement("figure");
-    const closeImg = document.createElement("img");
-    closeImg.setAttribute("src", "./icons/Close.png");
-    closeImg.setAttribute("alt", "Close");
-    closeImg.classList.add("CloseIMG");
-    //closeImg.addEventListener("click",DeleteItemShoppongCar);//PAra eleminar algo del carrito de compras
-    closeFigure.appendChild(closeImg);
-    shoppingCard.appendChild(closeFigure);
-  
-    // Agrega el elemento ShoppingCards al contenedor ShoppingCarContainer
-    shoppingCartContainer.appendChild(shoppingCard);
+function CreateShoppingCartProduct() {
+    //function CreateShoppingCartProduct(imagen, nombre, precio) {
+    
+    shoppingCartContainer.innerHTML = '';
+    
+    for (eachproduct of ShoopingCarList) {
+        // Crea el elemento div ShoppingCards
+        const shoppingCard = document.createElement("div");
+        shoppingCard.classList.add("ShoppingCards");
+        // Crea el elemento figure con la imagen
+        const figure = document.createElement("figure");
+        const img = document.createElement("img");
+        img.setAttribute("src", eachproduct.imageProduct);
+        img.setAttribute("alt", "Cosa comprada");
+        img.classList.add("productIMG");
+        figure.appendChild(img);
+        shoppingCard.appendChild(figure);
+    
+        // Crea los elementos <p> para el nombre y el precio
+        const nombreElement = document.createElement("p");
+        nombreElement.textContent = eachproduct.nameProduct;
+        shoppingCard.appendChild(nombreElement);
+    
+        const precioElement = document.createElement("p");
+        precioElement.textContent = "$" + eachproduct.priceProduct;
+        shoppingCard.appendChild(precioElement);
+    
+        // Crea el elemento figure con el botón de cierre
+        const closeFigure = document.createElement("figure");
+        const closeImg = document.createElement("img");
+        closeImg.setAttribute("src", "./icons/Close.png");
+        closeImg.setAttribute("alt", "Close");
+        closeImg.classList.add("CloseIMG");
+        closeImg.addEventListener("click",function(){DeleteItemShoppingCar(nombreElement.textContent)});//PAra eleminar algo del carrito de compras
+        
+        closeFigure.appendChild(closeImg);
+        shoppingCard.appendChild(closeFigure);
+        shoppingCartContainer.appendChild(shoppingCard);
+        // Agrega el elemento ShoppingCards al contenedor ShoppingCarContainer
     }
+    
+    
+}
+
+function DeleteItemShoppingCar(productoID){
+
+    console.log({ShoopingCarList});
+    console.log('Voy a eliminar ' + productoID)
+
+
+    ShoopingCarList = ShoopingCarList.filter(function (articulo) {
+        return articulo.nameProduct !== productoID
+    });
+
+
+    console.log({ShoopingCarList});
+    CreateShoppingCartProduct(); //Genero el carrito de compras con la nueva lista
 }
 
 function OpenProductDetail(productoID){
@@ -164,6 +184,7 @@ function CrearDetallesProducto(nombre, precio, imagen, descripcion) {
 
     addButton.appendChild(addImg);
     addButton.appendChild(document.createTextNode('Add to car'));
+    addButton.addEventListener('click',function(){AddShoppingCar(imagen)});//Agregar al carrito desde el product detail 
 
   // Agregar elementos HTML al contenedor ProductDetail
   ProductDetail.innerHTML = '';

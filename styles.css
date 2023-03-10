@@ -302,8 +302,7 @@ body {
     border: 1px solid black;
     max-height: 500px; /* altura máxima que deseas definir */
     overflow: auto; /* agregar scroll cuando se alcance la altura máxima */
-    display: grid;
-    grid-template-rows: auto 1fr;
+   
     background: var(--white);
     
 
@@ -614,6 +613,7 @@ body {
         width: 100%;
         border-radius: 20px;
         object-fit: cover; /*PAra que no se deforme la imagen con los nuevos width*/
+        
     }
     .ProductInfo figure {
         margin-right:0%;
@@ -630,6 +630,7 @@ body {
     .ShoppingCarContainer{
         width: 98%;
         max-height: none; /* altura máxima que deseas definir */
+        overflow: hidden; /* agregar scroll cuando se alcance la altura máxima */
         border: none;
    
     }

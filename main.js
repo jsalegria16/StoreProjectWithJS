@@ -12,6 +12,7 @@ const shoppingCarCloseIcon = document.querySelector('.shoppingCarCloseIcon'); //
 var ShoopingCarList = []; //Para los elemento dentro del carrito de compras
 const shoppingCartContainer = document.querySelector(".ShoppingCarContainer");
 const AmountOfElementsShoppingCar = document.querySelector('.AmountOfElementsShoppingCar')   
+const TotalPriceShoppingCar = document.querySelector('.TotalPriceShoppingCar')
 
 const CardsContainer =  document.querySelector(".CardsContainer") //PAra la lista de productos(InitialPage)
 var productList = []; //Para la Lista de productos
@@ -45,10 +46,13 @@ function toggleShoppingCar(){
     MEnuMobileContainer.classList.add('MenuInactive');
     ProductDetail.classList.add('MenuInactive');
     ShoppingCar.classList.toggle('MenuInactive');
+    PriceShoppingCar();
+
 }
 shoppingCarCloseIcon.addEventListener('click',CloseShoppingCar);
 function CloseShoppingCar(){
     ShoppingCar.classList.add('MenuInactive');
+    PriceShoppingCar();
 }
 
 function AddShoppingCar(productoID){
@@ -60,6 +64,7 @@ function AddShoppingCar(productoID){
     CreateShoppingCartProduct();
     //CreateShoppingCartProduct(producto.imageProduct,producto.nameProduct,producto.priceProduct);
     AmountOfElementsShoppingCar.innerText = ShoopingCarList.length;
+    PriceShoppingCar();
 }
 
 function CreateShoppingCartProduct() {
@@ -102,6 +107,7 @@ function CreateShoppingCartProduct() {
         shoppingCartContainer.appendChild(shoppingCard);
         // Agrega el elemento ShoppingCards al contenedor ShoppingCarContainer
     }
+    PriceShoppingCar();
     
     
 }
@@ -111,14 +117,20 @@ function DeleteItemShoppingCar(productoID){
     console.log({ShoopingCarList});
     console.log('Voy a eliminar ' + productoID)
 
-
     ShoopingCarList = ShoopingCarList.filter(function (articulo) {
         return articulo.nameProduct !== productoID
     });
 
-
     console.log({ShoopingCarList});
     CreateShoppingCartProduct(); //Genero el carrito de compras con la nueva lista
+}
+
+function PriceShoppingCar() {
+    let totalPrice = 0;
+    for (eachproduct of ShoopingCarList) {
+        totalPrice += eachproduct.priceProduct;
+    }
+    TotalPriceShoppingCar.innerText = "$" + totalPrice;
 }
 
 function OpenProductDetail(productoID){

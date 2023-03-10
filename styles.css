@@ -176,6 +176,30 @@ body {
 
 
 /*Aquí Inician los estilos para el menú movil*/
+.TittleMenuMobile{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.TittleMenuMobile img{
+
+    transform: rotate(180deg);
+    width: 38px;
+    height: 38px;
+    margin-left: 0px;
+}
+
+.TittleMenuMobile img:hover, .TittleMenuMobile h1:hover{
+    cursor: pointer;
+}
+
+.TittleMenuMobile h1{
+    text-align: center;
+    font-size: var(--sm);
+    margin-bottom: 17px;
+}
 
 .MobileMenu{
     position: absolute;
@@ -211,7 +235,7 @@ body {
     color: brown !important;
 }
 
-.MobileMenu ul:nth-child(1){
+.MobileMenu ul:nth-child(2){
     border-bottom: 1px solid var(--very-light-pink);
 }
 
@@ -220,7 +244,7 @@ body {
     color: brown !important;
 }
 
-.MobileMenu ul:nth-child(2){
+.MobileMenu ul:nth-child(3){
     margin-bottom: 50px;
 
 }
@@ -234,14 +258,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-right: 21px;
 }
 
 .Tittle img {
 
     transform: rotate(180deg);
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 38px;
     margin-left: 20px;
 }
 
@@ -260,7 +285,9 @@ body {
     box-sizing: border-box;
     position: absolute;
     right: 2px;
-    padding: 1px;
+    padding: 5px;
+    border: 1px solid blue;
+    border-radius: 5%;
     background: var(--white);
     
 
@@ -268,13 +295,16 @@ body {
 
 .ShoppingCarContainer {
 
-    padding: 5px;
-    width: 386px;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    border: 1px solid blue;
-    border-radius: 5%;
+    margin-top: 0px;
+    padding: 6px;
+    width:95%;
+    height: 500px;
+    border: 1px solid black;
+    max-height: 500px; /* altura máxima que deseas definir */
+    overflow: auto; /* agregar scroll cuando se alcance la altura máxima */
+   
     background: var(--white);
+    
 
 }
 
@@ -289,7 +319,7 @@ body {
 
 .ShoppingCards {
 
-    margin-top: 20px;
+    margin-top: 8px;
     display: grid;
     grid-template-columns: auto 1fr auto auto;
     gap: 16px;
@@ -314,8 +344,8 @@ body {
 }
 
 .CloseIMG {
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
 }
 
 .MyOrderInfo {
@@ -324,10 +354,13 @@ body {
     justify-content: space-between;
     gap: 16px;
 
-    padding: 5px;
-    margin-top: 20px;
+    padding: 0px 20px 0px 20px;
+    margin-top: 6px;
 
     background-color: var(--text-input-field);
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+
     align-items: center;
 
 }
@@ -335,8 +368,9 @@ body {
 
 .MyOrderInfo p:nth-child(1) {
 
-    font-size: var(--sm);
+    font-size: var(--lg);
     color: brown;
+    font-weight: bolder;
 
 }
 
@@ -375,18 +409,21 @@ body {
 /*Inicia la parte de los produbtos(InitialPage)*/
 .CardsContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px); /*PAra que cada celdita de un producto se ajuste automáticamente al anchos de la pestaña*/
+    grid-template-columns: repeat(auto-fill, 300px);
     place-content: center;
     margin-top: 20px;
     gap: 10px;
+    align-items: center;
 
     
 }
 
 .ProductCard {
     width: 250px;
-    border: 1px solid black;
+    border: 1px dashed black;
     padding: 10px;
+    border-radius: 10%;
+
 }
 
 .ProductCard > img{
@@ -409,7 +446,8 @@ body {
 }
 
 .ProductInfo figure {
-    margin-right: 0;
+    margin-right: 5%;
+    cursor: pointer;
 }
 
 .ProductInfo p:nth-child(1){
@@ -438,7 +476,7 @@ body {
     border: 1px solid blue;
     border-radius: 5%;
     padding: 9px;
-    right: 2px;
+    right: 4px;
     top: 123px;
     background: var(--white);
 
@@ -472,7 +510,7 @@ body {
 
 .ProductDetailImgProduct{
     width: 100%;
-   
+    border-radius: 5%;
 }
 
 
@@ -483,10 +521,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 4px 0px 4px 14px;
     height: 40px;
-    width: 100%;
+    width: 90%;
 
     border-radius: 8px;
     border: none;
@@ -499,7 +536,7 @@ body {
 }
 
 .ProductInfoProductDEtal{
-    margin-left: 20px;
+    margin-left: 1px;
 }
 
 .ProductInfoProductDEtal p:nth-child(1){
@@ -554,10 +591,12 @@ body {
         display: none;
     }
 
-    /*Esto es para el carrito de compras*/
-    .Tittle {
-        display: none;
-    }
+    /*Esto es para el carrito de compras
+        .Tittle {
+            display: none;
+        }
+        quiero la opcion de cerrar el carrito de ocmpras desde mobile
+    */
 
     /*Esto hace parte de la lista de productos (InitialPAge*/
 
@@ -567,13 +606,14 @@ body {
     }
     .ProductCard {
         width: 150px;
-        border: 1px solid black;
+        border: 1px dashed black;
         padding: 2px;
     }
     .ProductCard > img{
         width: 100%;
         border-radius: 20px;
         object-fit: cover; /*PAra que no se deforme la imagen con los nuevos width*/
+        
     }
     .ProductInfo figure {
         margin-right:0%;
@@ -583,12 +623,16 @@ body {
 
     /*Esto es para el carrito de compras Y su responsive en mobile*/
     .ShoppingCar{
-        width: 100%;
+        width:99%;
         margin: 0px;
         padding: 10px;
     }
     .ShoppingCarContainer{
         width: 98%;
+        max-height: none; /* altura máxima que deseas definir */
+        overflow: hidden; /* agregar scroll cuando se alcance la altura máxima */
+        border: none;
+   
     }
     /*Fin Esto es para el carrito de compras*/
 
@@ -598,9 +642,9 @@ body {
     }
 
     .ProductDetail{
-        width: 100%; /*Un responsive bonito */
-        margin: 0px;
+        width: 98%; /*Un responsive bonito */
         padding: 15px;
+        right: 4px;
     }
     /* Fin hace parte de los detalles de producto*/
 
